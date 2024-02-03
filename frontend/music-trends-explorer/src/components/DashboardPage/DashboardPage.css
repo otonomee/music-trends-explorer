@@ -1,0 +1,19 @@
+/* Dashboard.css */
+
+.dashboard {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .metrics-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .metric {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
