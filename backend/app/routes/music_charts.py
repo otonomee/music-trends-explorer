@@ -4,10 +4,14 @@ import csv
 from app.models.music_chart import MusicChart
 import requests
 from datetime import datetime
+from flask_cors import CORS, cross_origin
 
 main = Blueprint('main', __name__)
 
+from flask_cors import cross_origin
+
 @main.route('/music-charts')
+@cross_origin()  # This will enable CORS for this route
 def get_music_charts():
     music_charts = MusicChart.query.all()
     return jsonify([{

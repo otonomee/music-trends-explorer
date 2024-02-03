@@ -13,7 +13,7 @@ export const MusicChartDataProvider = ({ children }) => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/music-charts");
+        const response = await axios.get("http://127.0.0.1:5000/music-charts");
         console.log("API response:", response.data);
         setMusicChartData(response.data);
         setIsLoading(false);
@@ -23,13 +23,13 @@ export const MusicChartDataProvider = ({ children }) => {
         setIsLoading(false);
       }
     };
-  
+
     loadData();
   }, []); // Empty dependency array ensures this runs once on mount
-  
+
   console.log("Music chart data:", musicChartData);
   console.log("Loading state:", isLoading);
   console.log("Error:", error);
-  
+
   return <MusicChartDataContext.Provider value={{ musicChartData, isLoading, error }}>{children}</MusicChartDataContext.Provider>;
 };

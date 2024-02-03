@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, jsonify
 from .music_charts import get_music_charts, import_music_charts
 
 main = Blueprint('main', __name__)
